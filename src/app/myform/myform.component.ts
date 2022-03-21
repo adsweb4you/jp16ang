@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl , FormGroup} from '@angular/forms';
 @Component({
   selector: 'app-myform',
   templateUrl: './myform.component.html',
@@ -12,16 +12,28 @@ export class MyformComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  title = new FormControl();
-  email = new FormControl();
-  text  = new FormControl();
+  ContactForm = new FormGroup({
+    title: new FormControl(),
+    email: new FormControl(),
+    text : new FormControl()
+  })
 
-  get titles(){
-    return this.title.get('title')
+ 
+
+  get title(){
+    return this.ContactForm.get('title')
+  }
+
+  get email(){
+    return this.ContactForm.get('email')
+  }
+
+  get text(){
+    return this.ContactForm.get('text')
   }
 
   getData( ){
-   console.log(this.title.value , this.email.value ,this.text.value)
+   console.log(this.ContactForm.value)
   
   }  
 
