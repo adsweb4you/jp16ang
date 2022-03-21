@@ -1,0 +1,15 @@
+input , textarea{
+
+    // &.ng-invalid{
+    //     border: 1px solid red;
+    // }
+
+    // &.ng-valid{
+    //     border: 1px solid green;
+    // }
+
+    &:focus{
+        box-shadow: none;
+    }
+
+}
